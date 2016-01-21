@@ -10,7 +10,7 @@
 });*/
     $(window).on('beforeunload', function(event) {
         if (event) {
-            return 'you are an idiot!';
+            return 'you are at it!';
         };
     });
 </script>
@@ -18,6 +18,8 @@
 <body>
 <p id="hello_w">Hello World!</p>
 <p><h1>Hello Human!</h1></p>
+<div class="play">Play</div>
+<div class="pause">Stop</div>
 <script>
 $('#hello_w').click(function(){
 		alert('be careful with this');
@@ -27,6 +29,26 @@ $('#hello_w').mouseover(function(){
 	    alert('just get used to');
 	 },5000);
 	});
+$(document).ready(function() {
+        var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src', 'beep.mp3');
+        audioElement.setAttribute('autoplay', 'autoplay');
+        //audioElement.load()
+
+        $.get();
+
+        audioElement.addEventListener("load", function() {
+            audioElement.play();
+        }, true);
+
+        $('.play').click(function() {
+            audioElement.play();
+        });
+
+        $('.pause').click(function() {
+            audioElement.pause();
+        });
+    });
 </script>
 </body>
 </html>
